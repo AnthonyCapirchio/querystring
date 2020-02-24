@@ -4,11 +4,9 @@ cache:
   directories:
     - $GOPATH/pkg/mod
 
-# The coverprofile for multiple packages works in go 1.10
-# see https://tip.golang.org/doc/go1.10#test
-go:
-  - master
-  - travis
+go: 
+  - 1.13.x
+
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter

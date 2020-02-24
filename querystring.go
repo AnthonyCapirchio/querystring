@@ -71,9 +71,11 @@ func (q *QueryString) Build() string {
 	return q.Path + MapToQueryString(q.Data)
 }
 
-func CreateInstance(BasePath string) *QueryString {
-	return &QueryString{
-		Path: BasePath,
+func CreateInstance(basePath string) *QueryString {
+	q := QueryString{
 		Data: map[string]string{},
 	}
+	q.BasePath(basePath)
+
+	return &q
 }

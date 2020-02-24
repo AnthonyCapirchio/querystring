@@ -9,9 +9,9 @@ type DiffLine struct {
 func Compare(reference, compared string, ignoredKeys []string) []DiffLine {
 	diff := []DiffLine{}
 	ref := CreateInstance("")
-	ref.HydrateArguments(reference)
+	ref.HydrateFromQueryString(reference)
 	comp := CreateInstance("")
-	comp.HydrateArguments(compared)
+	comp.HydrateFromQueryString(compared)
 
 	for key, _ := range ref.Data {
 		if inSlice(ignoredKeys, key) == true {
